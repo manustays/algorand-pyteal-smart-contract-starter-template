@@ -49,7 +49,7 @@ A basic starter template to learn PyTeal development for Algorand blockchain sma
    1. Enter the docker container terminal: `./sandbox enter algod`
    1. Check if project’s bound volume is working: `ls /data`
    1. Get test wallet accounts: `goal account list`
-      ![Example](img/1.png)
+      ![Example](/img/1.png)
       - Copy account address in a variable for easy access: `WALLET1=F74DX......`
    1. Deploy contract within sandbox:
       ```bash
@@ -59,11 +59,11 @@ A basic starter template to learn PyTeal development for Algorand blockchain sma
       1. Store in a variable for easy access: `APPID=1`
    1. Get deployed app info: `goal app info --app-id $APPID`
        1. It returns application account, creator, approval hash, clear hash, etc.
-       ![Example](img/2.png)
+       ![Example](/img/2.png)
 
    1. Read smart contract storage: `goal app read --global --app-id $APPID --guess-format`
        1. Returns a formatted JSON with all current global values
-       ![Example](img/3.png)
+       ![Example](/img/3.png)
 
    1. Maintain minimum balance (0.1 algo or 100,000 microalgo) in the smart contract account:
        ```bash
@@ -76,7 +76,7 @@ A basic starter template to learn PyTeal development for Algorand blockchain sma
       ```
       1. Here, “inc” is the operation name as defined in the smart contract
       1. Check updated values *(counter incremented to one)*:
-         ![Example](img/4.png)
+         ![Example](/img/4.png)
 
 ## Debug Smart Contract
 
@@ -90,12 +90,12 @@ Sandbox comes with the `tealdbg` tool for debugging. It requires a transaction d
    ```bash
    tealdbg debug -d tx.dr --listen 0.0.0.0
    ```
-   ![Example](img/5.png)
+   ![Example](/img/5.png)
    1. The debug port (9392) can also be found from the `docker-compose.yml` file under the key: `CDT_PORT`.
 1. Open the Chrome browser and goto `chrome://inspect/#devices`
    1. Click on “Configure” beside the “Discover network targets” option.
    1. Add `localhost:9392`
-      ![Example](img/6.png)
+      ![Example](/img/6.png)
    1. Under “Remote Target”, look for the Algorand TEAL program and click on “inspect”.
 
 
