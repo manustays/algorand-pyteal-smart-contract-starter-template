@@ -51,7 +51,10 @@ A basic starter template to learn PyTeal development for Algorand blockchain sma
    1. Get test wallet accounts: `goal account list`
       ![Example](img/1.png)
       - Copy account address in a variable for easy access: `WALLET1=F74DX......`
-   1. Deploy contract within sandbox: `goal app create --creator $WALLET1 --approval-prog /data/build/approval.teal --clear-prog /data/build/clear.teal --global-byteslices 1 --global-ints 3 --local-byteslices 0 --local-ints 0`
+   1. Deploy contract within sandbox:
+      ```bash
+      goal app create --creator $WALLET1 --approval-prog /data/build/approval.teal --clear-prog /data/build/clear.teal --global-byteslices 1 --global-ints 3 --local-byteslices 0 --local-ints 0
+      ```
       1. It returns a numeric app ID if successfully deployed (eg: 1)
       1. Store in a variable for easy access: `APPID=1`
    1. Get deployed app info: `goal app info --app-id $APPID`
@@ -63,28 +66,38 @@ A basic starter template to learn PyTeal development for Algorand blockchain sma
        ![Example](img/3.png)
 
    1. Maintain minimum balance (0.1 algo or 100,000 microalgo) in the smart contract account:
-       1. `goal clerk send -f $WALLET1 -t $APP_ACCOUNT -a 100000`
+       ```bash
+       goal clerk send -f $WALLET1 -t $APP_ACCOUNT -a 100000
+       ```
        1. [Algorand PyTeal Course | Transaction Fee Pooling and Minimum Balances - YouTube](https://www.youtube.com/watch?v=k3K9_UNlsFY&list=PLpAdAjL5F75CNnmGbz9Dm_k-z5I6Sv9_x&index=12)
-   1. Call a Smart Contract Operation: `goal app call --app-id $APPID --from $WALLET1 --app-arg "str:inc"`
-       1. Here, “inc” is the operation name as defined in the smart contract
-       1. Check updated values *(counter incremented to one)*:
-          ![Example](img/4.png)
+   1. Call a Smart Contract Operation:
+      ```bash
+      goal app call --app-id $APPID --from $WALLET1 --app-arg "str:inc"
+      ```
+      1. Here, “inc” is the operation name as defined in the smart contract
+      1. Check updated values *(counter incremented to one)*:
+         ![Example](img/4.png)
 
 ## Debug Smart Contract
 
 Sandbox comes with the `tealdbg` tool for debugging. It requires a transaction dump file as input that we can generate while executing the smart-contract.
 
 1. Generate the transaction dump file:
-   1. `goal app call --app-id $APPID --from $WALLET1 --app-arg "str:dec" **--dryrun-dump -o tx.dr**`
+   ```bash
+   goal app call --app-id $APPID --from $WALLET1 --app-arg "str:dec" **--dryrun-dump -o tx.dr**
+   ```
 1. Start debugger session:
-   1. `tealdbg debug -d tx.dr --listen 0.0.0.0`
-      ![Example](img/5.png)
+   ```bash
+   tealdbg debug -d tx.dr --listen 0.0.0.0
+   ```
+   ![Example](img/5.png)
    1. The debug port (9392) can also be found from the `docker-compose.yml` file under the key: `CDT_PORT`.
 1. Open the Chrome browser and goto `chrome://inspect/#devices`
    1. Click on “Configure” beside the “Discover network targets” option.
    1. Add `localhost:9392`
       ![Example](img/6.png)
    1. Under “Remote Target”, look for the Algorand TEAL program and click on “inspect”.
+
 
 ## Links
 
