@@ -16,7 +16,7 @@ A basic starter template to learn PyTeal development for Algorand blockchain sma
 
 ### Setup the Sandbox for Local Testing
 1. Start Docker Desktop and goto the Sandbox folder
-2. Add this project folder as bind volume in the Sandbox Docker image:
+2. Add your project folder as bind volume in the Sandbox Docker image:
    - In the Sandbox root folder, edit the file `docker-compose.yml` and add the following lines under the key `services.algod`:
       ```yml
       volumes:
@@ -24,8 +24,8 @@ A basic starter template to learn PyTeal development for Algorand blockchain sma
           source: <path to this project folder>
           target: /data
       ```
-3. Start the Sandbox docker with the command: `./sandbox up -v`
-4. Other useful Sandbox commands (after starting it):
+3. Start the Sandbox docker container with the command: `./sandbox up -v`
+4. **Other useful Sandbox commands** (after starting it):
     1. Shut down the Sandbox: `./sandbox down`
     2. Get a list of test wallets/accounts: `./sandbox goal account list`
     3. Check the balance of an account (app account or wallet): `./sandbox goal balance --address <account-address>`
@@ -107,7 +107,7 @@ Sandbox comes with the `tealdbg` tool for debugging. It requires a transaction d
 - [Official Algorand Smart Contract Guidelines](https://developer.algorand.org/docs/get-details/dapps/avm/teal/guidelines/)
 - [PyTeal Documentation](https://pyteal.readthedocs.io/en/latest/index.html)
 - [Algorand DevRel Example Contracts](https://github.com/algorand/smart-contracts)
-- [awesome-algorand](https://github.com/aorumbayev/awesome-algorand)
+- [Awesome-Algorand](https://github.com/aorumbayev/awesome-algorand)
 
 
 ## Credits
