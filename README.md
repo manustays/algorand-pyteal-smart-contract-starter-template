@@ -8,7 +8,10 @@ A basic starter template to learn PyTeal development for Algorand blockchain sma
 1. Install [Git](https://github.com/git-guides/install-git)
 2. Install [Docker Desktop](https://www.docker.com/products/docker-desktop)
 3. Install [Algorand sandbox](https://github.com/algorand/sandbox)
-4. Clone this project: `git clone git@github.com:manustays/algorand-pyteal-smart-contract-starter-template.git`
+4. Copy this project without cloning:
+   ```bash
+   git clone -b main --depth 1 --single-branch git@github.com:manustays/algorand-pyteal-smart-contract-starter-template.git && rm -rf algorand-pyteal-smart-contract-starter-template/.git/
+   ```
 
 
 ### Setup the Sandbox for Local Testing
