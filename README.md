@@ -90,12 +90,12 @@ Sandbox comes with the `tealdbg` tool for debugging. It requires a transaction d
    ```bash
    tealdbg debug -d tx.dr --listen 0.0.0.0
    ```
-   ![Example](/img/5.png)
+   ![Example](/img/6.png)
    1. The debug port (9392) can also be found from the `docker-compose.yml` file under the key: `CDT_PORT`.
 1. Open the Chrome browser and goto `chrome://inspect/#devices`
    1. Click on “Configure” beside the “Discover network targets” option.
    1. Add `localhost:9392`
-      ![Example](/img/6.png)
+      ![Example](/img/7.png)
    1. Under “Remote Target”, look for the Algorand TEAL program and click on “inspect”.
 
 
@@ -108,4 +108,5 @@ Sandbox comes with the `tealdbg` tool for debugging. It requires a transaction d
 
 
 ## Credits
-Forked from [algorand-devrel/pyteal-course](https://github.com/algorand-devrel/pyteal-course).
+- Forked from [algorand-devrel/pyteal-course](https://github.com/algorand-devrel/pyteal-course).
+- Accompanying [tutorial on YouTube](https://www.youtube.com/playlist?list=PLpAdAjL5F75CNnmGbz9Dm_k-z5I6Sv9_x)
